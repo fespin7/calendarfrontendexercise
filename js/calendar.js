@@ -51,16 +51,7 @@ function generateMonth(year, month, firstSelDay, lastSelDay){
     // to next saturday after month
   	while (currentDay <= nextSaturday) {
 
-		if (currentDay.getDay() === 0) {
-    		// add week and start new one when it is sunday
-    		if(week.length > 0)
-    			result.push(week);
-
-    		week = [];
-		}
-
-    
-    	// add day
+  		// add day
 		week.push({
     		date: new Date(currentDay),
       		isInMonth: (currentDay >= firstDayOfMonth && currentDay <= lastDayOfMonth), // flag if day is within the month
@@ -68,9 +59,16 @@ function generateMonth(year, month, firstSelDay, lastSelDay){
       		isWeekend: (currentDay.getDay() == 0 || currentDay.getDay() == 6), // flag if day is weekend
     	});
 
+		if (currentDay.getDay() === 6) {
+    		// add week and start new one when it is saturday
+    		result.push(week);
+    		week = [];
+		}
+
 		// iterate to next day
 		currentDay.setDate(currentDay.getDate() + 1);
 	}
+	debugger
   	return result;
 
 }
