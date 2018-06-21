@@ -1,6 +1,6 @@
 #content {
   margin: 0 auto;
-  width: 58%;
+  width: 780px;
   font-family: Arial;
   font-size: 14px;
 }
@@ -67,6 +67,27 @@
   background-color: #f8fb14;
 }
 
+
+/* Media queries for smaller screens */
+@media screen and (max-width:800px) {
+    #content {
+      width: 390px;
+    }
+}
+
+@media screen and (max-width:410px) {
+    #content {
+      width: 195px;
+    }
+
+    #form {
+      width: 190px;
+    }
+
+    #form div{
+      text-align: left;
+    }
+}
 
 
 
