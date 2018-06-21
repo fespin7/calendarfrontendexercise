@@ -15,6 +15,14 @@
   padding-top: 5px;
 }
 
+#form div input {
+  width: 172px;
+}
+
+#form div select {
+  width: 176px;
+}
+
 #calendar {
     border: 1px solid #ccc;
     padding: 5px;

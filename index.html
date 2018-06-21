@@ -9,8 +9,36 @@
    
 	<script type="text/javascript">
 
+	var countries = [ 
+	  {name: 'United States', code: 'US'}, 
+	  {name: 'Argentina', code: 'AR'}, 
+	  {name: 'Bolivia', code: 'BO'}, 
+	  {name: 'Brazil', code: 'BR'}, 
+	  {name: 'Canada', code: 'CA'}, 
+	  {name: 'Chile', code: 'CL'}, 
+	  {name: 'Colombia', code: 'CO'}, 
+	  {name: 'Costa Rica', code: 'CR'}, 
+	  {name: 'Cuba', code: 'CU'}, 
+	  {name: 'Dominican Republic', code: 'DO'}, 
+	  {name: 'Ecuador', code: 'EC'}, 
+	  {name: 'El Salvador', code: 'SV'}, 
+	  {name: 'Guatemala', code: 'GT'}, 
+	  {name: 'Honduras', code: 'HN'}, 
+	  {name: 'Panama', code: 'PA'}, 
+	  {name: 'Paraguay', code: 'PY'}, 
+	  {name: 'Peru', code: 'PE'}, 
+	  {name: 'Puerto Rico', code: 'PR'}
+	];
+
 	$(document).ready(function(){
 
+		//Fill countries select list
+		$.each(countries,function(i, country) 
+		{
+		    $("#ddlCountry").append('<option value=' + country.code + '>' + country.name + '</option>');
+		});
+
+		//Click event for generate calendar button
 		$("#btnGenerate").click(function(){
 
 			var startDate = $("#txtStartdate").val();
@@ -43,6 +71,7 @@
 	<div id="form">
 		<div>Start date: <input type="text" id="txtStartdate" placeholder="MM/DD/YYYY"></div>
 		<div>Number of days: <input type="text" id="txtDaysNumber"></div>
+		<div>Country: <select id="ddlCountry"></select></div>
 		<div><button id="btnGenerate">Generate calendar</button></div>
 		
 	</div>

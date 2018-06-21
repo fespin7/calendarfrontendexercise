@@ -1,7 +1,6 @@
 
 
 
-
 function renderCalendar(selectedDate, daysToAdd){
 
 	var monthNames = ["January", "February", "March", "April", "May", "June",
