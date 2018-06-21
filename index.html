@@ -10,21 +10,50 @@
 	<script type="text/javascript">
 
 	$(document).ready(function(){
-		renderCalendar("6/18/2018", 50);
+
+		$("#btnGenerate").click(function(){
+
+			var startDate = $("#txtStartdate").val();
+			var daysNumber = $("#txtDaysNumber").val();
+
+			if(startDate == "" || startDate == null || startDate == undefined){
+				alert("Please write a start date.");
+				return
+			}
+
+			if(daysNumber == "" || daysNumber == null || daysNumber == undefined || !$.isNumeric(daysNumber)){
+				alert("Please specify a valid number of days to generate.");
+				return
+			}
+
+			renderCalendar(startDate, parseInt(daysNumber));
+		});
 	})
-		
+
 
 	
-
 
 	</script>
 
 </head>
 <body>
 
+<div id="content">
+	
+	<div id="form">
+		<div>Start date: <input type="text" id="txtStartdate" placeholder="MM/DD/YYYY"></div>
+		<div>Number of days: <input type="text" id="txtDaysNumber"></div>
+		<div><button id="btnGenerate">Generate calendar</button></div>
+		
+	</div>
+
+	<div id="calendar"></div>
 
 
-<div id="calendar"></div>
+
+</div>
+
+
 
 
 </body>

@@ -1,8 +1,28 @@
+#content {
+  margin: 0 auto;
+  width: 58%;
+  font-family: Arial;
+  font-size: 14px;
+}
 
+#form {
+  width: 300px;
+  padding: 20px 0 20px;
+}
+
+#form div{
+  text-align: right;
+  padding-top: 5px;
+}
+
+#calendar {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
 
 .month{
   width: 168px;
-  padding-right: 20px;
+  padding: 0 20px 20px 0;
   display: inline-block;
 }
 
@@ -38,3 +58,7 @@
 .weekend{
   background-color: #f8fb14;
 }
+
+
+
+

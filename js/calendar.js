@@ -19,6 +19,7 @@ function renderCalendar(selectedDate, daysToAdd){
 
 	var monthsToDisplay = getMonths(firstDay, lastDay);
 
+	$('#calendar').html("");
 
 	//Iterate through months to display
 	$.each(monthsToDisplay, function( i, month ) {
