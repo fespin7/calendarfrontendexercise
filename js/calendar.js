@@ -2,7 +2,7 @@
 
 
 function renderCalendar(selectedDate, daysToAdd){
-
+	debugger
 	var monthNames = ["January", "February", "March", "April", "May", "June",
   		"July", "August", "September", "October", "November", "December"];
 
@@ -13,8 +13,8 @@ function renderCalendar(selectedDate, daysToAdd){
 	  return;
 	}
 
-	var lastDay = new Date();
-	lastDay.setDate(firstDay.getDate() + daysToAdd);
+	var lastDay = new Date(firstDay);
+	lastDay.setDate(lastDay.getDate() + daysToAdd);
 
 	var monthsToDisplay = getMonths(firstDay, lastDay);
 
